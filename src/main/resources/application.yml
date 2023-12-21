@@ -1,18 +1,20 @@
-spring:
-  profiles:
-    active: dev
----
+#spring:
+#  profiles:
+#    active: dev
+#---
 spring:
   devtools:
     livereload:
       enabled: true
     restart:
       enabled: true
-  datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/DBNAME?allowPublicKeyRetrieval=true&useSSL=false
-    username: #DB USERNAME
-    password: #DB PASSWORD
+  thymeleaf:
+    cache: false
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:3306/DBNAME?allowPublicKeyRetrieval=true&useSSL=false
+#    username: #DB USERNAME
+#    password: #DB PASSWORD
 
   jpa:
     hibernate:
