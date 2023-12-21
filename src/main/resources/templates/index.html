@@ -1,50 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Minu's - Portfolio</title>
-        <!-- Favicon-->
-        <link rel="icon" th:href="@{/assets/favicon.ico}" type="image/x-icon" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link th:href="@{/css/styles.css}" rel="stylesheet" />
-        <link th:href="@{/css/skills.css}" rel="stylesheet" />
-    </head>
-    <body id="page-top">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<th:block layout:fragment="content">
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top">MINU'S Portfolio</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">SKILLS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Archiving">Archiving</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#projects">PROJECTS</a></li>
-
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded" th:href="@{https://github.com/als904204/Portfolio}" target="_blank">
-                                <small>GitHub</small>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
+    <section  class="masthead bg-primary text-white text-center">
+        <header>
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" th:src="@{assets/img/myFace.png}" alt="..." />
@@ -61,8 +21,9 @@
                 <p class="masthead-subheading font-weight-light mb-2">새로운 기술을 배우는 것을 좋아하며 느리더라도 꼼꼼히 배우는 것을 목표로 합니다</p>
             </div>
         </header>
+    </section>
 
-        <section class="page-section" id="skills">
+    <section class="page-section bg-white" id="skills" >
         <!-- Portfolio Section-->
         <div class="container">
             <!-- Portfolio Section Heading-->
@@ -114,125 +75,98 @@
                 </div>
             </div>
         </div>
-        </section>
-
-        <section class="page-section" id="Archiving"  style="background-color: #1a252f">
-            <!-- Portfolio Section-->
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">ARCHIVING</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon text-white"><i class="fa-solid fa-book"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Card containing images -->
-                <div class="card my-card">
-                    <div class="card-body">
-                        <!-- First row of images -->
-                        <div class="row text-center my-image-container">
-                            <div class="col-6">
-                                <a href="https://github.com/als904204" target="_blank">
-                                    <img class="img-fluid equal-height-img-archiving" th:src="@{/assets/img/archiving/github.png}" alt="git" />
-                                </a>
-                                <p>
-                                    <a href="https://github.com/als904204" class="blue-link" target="_blank">github.com/als904204</a>
-                                </p>
-                                <p>저의 소스코드 저장소입니다</p>
-                                <p>과거 프로젝트, 혼자서 연습한 소스 코드</p>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://velog.io/@minu1117" target="_blank">
-                                     <img class="img-fluid equal-height-img-archiving" th:src="@{/assets/img/archiving/velog.png}" alt="velog" />
-                                </a>
-                                <p><a href="https://velog.io/@minu1117" target="_blank">velog.io/@minu1117</a>
-                                </p>
-                                <p>공부 기록과 프로젝트에 관련된 문제 해결을 기록하는 블로그입니다</p>
-                                <p>또한 새로운 기술을 배울 때 기록합니다</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </section>
 
 
-
-
+    <section class="page-section" id="Archiving"  style="background-color: #1a252f">
         <!-- Portfolio Section-->
-        <section class="page-section" id="projects" style="background-color: rgb(70, 106, 208)">
-            <div class="container" >
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">PROJECTS</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa-solid fa-list-check"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-
-                <div class="card my-card">
-                    <div class="card-body">
-                        <!-- First row of images -->
-                        <div class="row text-center my-image-container">
-                            <div class="col-12">
-                                <h2><a href="https://linkloud.io" class="blue-link">LINKLOUD.IO</a></h2>
-                                <p>TODO : 링클라우드 프로젝트 설명 적기</p>
-                            </div>
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">ARCHIVING</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon text-white"><i class="fa-solid fa-book"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Card containing images -->
+            <div class="card my-card">
+                <div class="card-body">
+                    <!-- First row of images -->
+                    <div class="row text-center my-image-container">
+                        <div class="col-6">
+                            <a href="https://github.com/als904204" target="_blank">
+                                <img class="img-fluid equal-height-img-archiving" th:src="@{/assets/img/archiving/github.png}" alt="git" />
+                            </a>
+                            <p>
+                                <a href="https://github.com/als904204" class="blue-link" target="_blank">github.com/als904204</a>
+                            </p>
+                            <p>저의 소스코드 저장소입니다</p>
+                            <p>과거 프로젝트, 혼자서 연습한 소스 코드</p>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://velog.io/@minu1117" target="_blank">
+                                <img class="img-fluid equal-height-img-archiving" th:src="@{/assets/img/archiving/velog.png}" alt="velog" />
+                            </a>
+                            <p><a href="https://velog.io/@minu1117" target="_blank">velog.io/@minu1117</a>
+                            </p>
+                            <p>공부 기록과 프로젝트에 관련된 문제 해결을 기록하는 블로그입니다</p>
+                            <p>또한 새로운 기술을 배울 때 기록합니다</p>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </section>
-
-        <!-- Portfolio Section-->
-        <section class="page-section"  style="background-color: white">
-            <div class="container" >
-
-
-                <div class="card my-card">
-                    <div class="card-body">
-                        <!-- First row of images -->
-                        <div class="row text-center my-image-container">
-                            <div class="col-12">
-                                <h2><a href="https://linkloud.io" class="blue-link">TEST.COM</a></h2>
-                                <p>TODO : 두번째 프로젝트</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-
-        <!-- Footer-->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Social Icons-->
-                    <div class="mb-5 mb-lg-0 text-center ">
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/als904204"><i class="fab fa-brands fa-github"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="http://velog.io/@min.uuu1117"><i class="fab fa-blogger"></i></a>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Min Woo Kim 2023</small></div>
-            <div class="container"><small>Hosted By Render.com</small></div>
         </div>
+    </section>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-<!--        <script src="js/scripts.js"></script>-->
-        <script th:src="@{/js/scripts.js}"></script>
-    </body>
+    <!-- Portfolio Section-->
+    <section class="page-section" id="projects" style="background-color: rgb(70, 106, 208)">
+        <div class="container" >
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">PROJECTS</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-list-check"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+
+            <div class="card my-card">
+                <div class="card-body">
+                    <!-- First row of images -->
+                    <div class="row text-center my-image-container">
+                        <div class="col-12">
+                            <h2><a href="https://linkloud.io" class="blue-link" target="_blank">LINKLOUD.IO</a></h2>
+                            <p>TODO : 링클라우드 프로젝트 설명 적기</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Portfolio Section-->
+    <section class="page-section"  style="background-color: white">
+        <div class="container" >
+
+
+            <div class="card my-card">
+                <div class="card-body">
+                    <!-- First row of images -->
+                    <div class="row text-center my-image-container">
+                        <div class="col-12">
+                            <h2><a href="https://linkloud.io" target="_blank" class="blue-link">TEST.COM</a></h2>
+                            <p>TODO : 두번째 프로젝트</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</th:block>
 </html>
+
