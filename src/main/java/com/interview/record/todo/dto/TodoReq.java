@@ -6,6 +6,7 @@ import lombok.Getter;
 public class TodoReq {
 
     private String title;
+    private String content;
     private boolean completed;
 
 

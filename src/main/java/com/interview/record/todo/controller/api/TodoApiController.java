@@ -1,7 +1,9 @@
 package com.interview.record.todo.controller.api;
 
+import com.interview.record.todo.dto.TodoResponse;
 import com.interview.record.todo.dto.TodoReq;
 import com.interview.record.todo.dto.TodoRes;
+import com.interview.record.todo.dto.TodoStatusUpdateReq;
 import com.interview.record.todo.service.TodoService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -53,7 +55,18 @@ public class TodoApiController {
         return ResponseEntity.ok().build();
     }
 
+    @PutMapping("/{id}/status")
+    public ResponseEntity<?> updateTodoStatus(@PathVariable Long id,
+        @RequestBody TodoStatusUpdateReq todoStatus) {
+        todoService.updateTodoStatus(id, todoStatus.getTodoStatus());
+        return ResponseEntity.ok().build();
+    }
 
+    @GetMapping("/test")
+    public ResponseEntity<List<TodoResponse>> getAllTodos() {
+        List<TodoResponse> allTodos = todoService.getAllTodos();
+        return ResponseEntity.ok(allTodos);
+    }
 
 
 }

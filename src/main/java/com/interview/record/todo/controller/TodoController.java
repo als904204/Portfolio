@@ -13,4 +13,8 @@ public class TodoController {
         return "/todo";
     }
 
+    @GetMapping("/form")
+    public String todoForm() {
+        return "/todo-form";
+    }
 }

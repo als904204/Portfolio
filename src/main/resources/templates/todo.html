@@ -2,8 +2,54 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout}">
 <th:block layout:fragment="content">
+
   <section  class="masthead bg-primary text-white text-center">
-    <h1>TODO</h1>
+    <header>
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" th:src="@{assets/img/todo.png}" alt="..." />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">공부 기록</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fa-solid fa-pen"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-2">목표 설정 그리고 어떤 것을 공부 했는지, 기록하는 페이지 입니다 </p>
+      </div>
+    </header>
   </section>
+
+
+
+  <section class="page-section bg-white">
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">What I Studied</h2>
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fa-regular fa-pen-to-square"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <div>
+        <div class="text-center">
+            <a class="btn btn-warning" th:href="@{/todo/form}">Create</a>
+        </div>
+
+      <div class="card my-card">
+        <div class="card-body">
+          <div class="row text-center" id="todo-container">
+            <!-- 여기에 Todo 항목들이 동적으로 로드-->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+<script th:src="@{/js/todo/todo.js}"></script>
 </th:block>
 </html>
