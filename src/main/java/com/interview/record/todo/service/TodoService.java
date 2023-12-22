@@ -1,6 +1,5 @@
 package com.interview.record.todo.service;
 
-import com.interview.record.todo.dto.TodoResponse;
 import com.interview.record.todo.dto.TodoReq;
 import com.interview.record.todo.dto.TodoRes;
 import com.interview.record.todo.entity.Todo;
@@ -25,7 +24,6 @@ public class TodoService {
             .title(todoReq.getTitle())
             .content(todoReq.getContent())
             .todoStatus(TodoStatus.TRYING)
-            .completed(todoReq.isCompleted())
             .build();
         Todo savedTodo = todoRepository.save(todo);
         return savedTodo.getId();
@@ -40,7 +38,6 @@ public class TodoService {
                 t.getTitle(),
                 t.getContent(),
                 t.getTodoStatus(),
-                t.isCompleted(),
                 t.getCreatedAt()))
             .toList();
     }
@@ -49,14 +46,14 @@ public class TodoService {
     public TodoRes getTodo(Long id) {
         Todo todo = todoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException(
             "Todo not found"));
-        return new TodoRes(todo.getId(), todo.getTitle(), todo.getContent(),todo.getTodoStatus(),todo.isCompleted(), todo.getCreatedAt());
+        return new TodoRes(todo.getId(), todo.getTitle(), todo.getContent(),todo.getTodoStatus(), todo.getCreatedAt());
     }
 
     @Transactional
     public void updateTodo(Long id, TodoReq todoReq) {
         Todo todo = todoRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Todo not found"));
-        todo.updateTodo(todoReq.getTitle(), todoReq.getContent(), todoReq.isCompleted());
+        todo.updateTodo(todoReq.getTitle(), todoReq.getContent());
     }
 
     @Transactional
@@ -72,15 +69,6 @@ public class TodoService {
             .orElseThrow(() -> new IllegalArgumentException("Todo not found"));
         todo.updateTodoStatus(status);
         todoRepository.save(todo);
-    }
-
-
-
-    public List<TodoResponse> getAllTodos() {
-        List<Todo> all = todoRepository.findAll();
-        return all.stream()
-            .map(TodoResponse::new)
-            .toList();
     }
 
 

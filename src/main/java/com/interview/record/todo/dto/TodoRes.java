@@ -12,19 +12,17 @@ public class TodoRes {
     private final String title;
     private final String content;
     private final String todoStatus;
-    private final boolean completed;
 
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM.dd HH:mm")
     private final LocalDateTime createdAt;
 
-    public TodoRes(Long id, String title, String content, TodoStatus todoStatus, boolean completed,
+    public TodoRes(Long id, String title, String content, TodoStatus todoStatus,
         LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.todoStatus = todoStatus.getKey();
-        this.completed = completed;
         this.createdAt = createdAt;
     }
 
