@@ -55,10 +55,10 @@ public class TodoApiController {
     }
 
     @PutMapping("/{id}/status")
-    public ResponseEntity<?> updateTodoStatus(@PathVariable Long id,
+    public ResponseEntity<Void> updateTodoStatus(@PathVariable Long id,
         @RequestBody TodoStatusUpdateReq todoStatus) {
         todoService.updateTodoStatus(id, todoStatus.getTodoStatus());
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 
 }
